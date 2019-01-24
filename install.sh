@@ -54,6 +54,12 @@ echo "Enter dashicon for the plugin..."
 tput setaf 7
 read wp_dashicon
 
+tput setaf 6
+echo "Enter security role for plugin..."
+
+tput setaf 7
+read wp_access
+
 sed -i "s/PLUGINDASHICON/$wp_dashicon/g" $file
 sed -i "s/PLUGINNAME/$wp_name/g" $file
 sed -i "s/PLUGINURI/$wp_uri/g" $file
@@ -62,6 +68,8 @@ sed -i "s/PLUGIND/$wp_name_dash/g" $file
 sed -i "s/PLUGIN_NAME/$wp_name_under/g" $file
 sed -i "s/AUTHORNAME/$wp_author/g" $file
 sed -i "s/AUTHORURI/$wp_author_uri/g" $file
+sed -i "s/ACCESSNAME/$wp_access/g" $file
+
 
 tput setaf 5
 tput bold 
