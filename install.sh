@@ -14,51 +14,25 @@ echo -e "#                 the plugin Template.                     #"
 echo -e "#==========================================================#"
 tput setaf 6
 
-echo "Enter the plugin name..."
+a0=("Enter the plugin name..." "Enter the plugin URI..." "Enter description for the plugin..." "Enter author for the plugin..." "Enter author URI for the plugin..." "Enter dashicon for the plugin..." "Enter security role for plugin...")
+a1=(wp_name wp_uri wp_desc wp_author wp_author_uri wp_dashicon wp_access)
 
-tput setaf 7
-read wp_name
+setup_vars () {
+   tput setaf 6
+   echo $1
+   
+   tput setaf 7
+   read $2
+}
+
+for ((i=0;i<"${#a0[@]}";i++))
+do
+   setup_vars "${a0[$i]}" ${a1[$i]}
+done
 
 wp_name_lower="${wp_name,,}"
-
 wp_name_under=${wp_name_lower// /_}
 wp_name_dash=${wp_name_lower// /-}
-
-tput setaf 6
-echo "Enter the plugin URI..."
-
-tput setaf 7
-read wp_uri
-
-tput setaf 6
-echo "Enter description for the plugin..."
-
-tput setaf 7
-read wp_desc
-
-tput setaf 6
-echo "Enter author for the plugin..."
-
-tput setaf 7
-read wp_author
-
-tput setaf 6
-echo "Enter author URI for the plugin..."
-
-tput setaf 7
-read wp_author_uri
-
-tput setaf 6
-echo "Enter dashicon for the plugin..."
-
-tput setaf 7
-read wp_dashicon
-
-tput setaf 6
-echo "Enter security role for plugin..."
-
-tput setaf 7
-read wp_access
 
 sed -i "s/PLUGINDASHICON/$wp_dashicon/g" $file
 sed -i "s/PLUGINNAME/$wp_name/g" $file
@@ -69,7 +43,6 @@ sed -i "s/PLUGIN_NAME/$wp_name_under/g" $file
 sed -i "s/AUTHORNAME/$wp_author/g" $file
 sed -i "s/AUTHORURI/$wp_author_uri/g" $file
 sed -i "s/ACCESSNAME/$wp_access/g" $file
-
 
 tput setaf 5
 tput bold 
