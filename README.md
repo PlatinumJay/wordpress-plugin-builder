@@ -16,17 +16,15 @@ Basic function is done.
 Enter in parameters:
 
 ![Install](/screenshots/install-screenshot.png)
-Format: ![Alt Text](url)
+
 
 On the WordPress admin Dashboard go to Plugins->Add New.
-![Upload](/screenshots/upload-plugin-screenshot.png)
-Format: ![Alt Text](url)
-
 Upload the zip file.
+![Upload](/screenshots/upload-plugin-screenshot.png)
 
 Activate plugin.
 ![Activate](/screenshots/list-plugin-screenshot.png)
-Format: ![Alt Text](url)
+
 
 ## Warning
 Does not validate input.
