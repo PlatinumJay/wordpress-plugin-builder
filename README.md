@@ -23,6 +23,7 @@ Upload the zip file.
 ![Upload](/screenshots/upload-plugin-screenshot.png)
 
 Activate plugin.
+
 ![Activate](/screenshots/list-plugin-screenshot.png)
 
 
